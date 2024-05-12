@@ -2,7 +2,7 @@
 
 ## Introduction
 
-All the notes are from my undergraduate and postgraduate courses and written in Typst (https://typst.app/). There are only **useful** (in my opinion) definitions and theorems so that I can focus on coding or analysis instead of the proof.
+Most of the notes are from my undergraduate and postgraduate courses and written in Typst (https://typst.app/). There are only **useful** (in my opinion) definitions and theorems so that I can focus on coding or analysis instead of the proof.
 
 Please feel free if you want to use them, **but there's no guarantee of correctness.**
 
