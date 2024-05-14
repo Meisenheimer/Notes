@@ -2,12 +2,6 @@
 
 = Initial Value Problem
 
-#env("Definition")[
-  For $T >= 0$, $mathbf(f): RR^n times [0, T] -> RR^n$ and $mathbf(u)_0 in RR^n$, the *initial value problem* (IVP) is to find $u(t) in C^1$ satisfies
-
-  $ mathbf(u)^prime = mathbf(f) (mathbf(u) (t), t), #h(1em) mathbf(u) (0) = mathbf(u)_0. $
-]
-
 #env("Notation")[
   To numerically solve the IVP, we are given initial condition $mathbf(u)_0 = mathbf(u) (t_0)$, and want to compute approximations ${ mathbf(u)_k, k = 1, 2, dots }$ such that
 
