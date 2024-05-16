@@ -4,14 +4,146 @@
 
 == Calculus
 
-=== Gauss-Green Theorem (Divergence Theorem)
+=== Mean value theorem
 
-#env("Theorem", name: "Gauss-Green Theorem (Divergence Theorem)")[
+#env("Theorem", name: "Rolle's theorem")[
+  Given $n gt.eq 2$ and $f in C^(n-1)([a, b])$ with $f^((n))(x)$ exists at each point of $(a, b)$, suppose that $f(x_0) = dots.c f(x_n) = 0$ for $a lt.eq x_0 < dots.c < x_n lt.eq b$, then there is a point $xi in (a, b)$ such that $f^((n))(xi) = 0$.
+]
+
+#env("Theorem", name: "Lagrange's mean value theorem")[
+  Given $f in C^1([a, b])$, then there exists $xi in (a, b)$ such that
+
+  $ f^prime (xi) = (f(b) - f(a)) / (b-a). $
+]
+
+#env("Theorem", name: "Cauchy's mean value theorem")[
+  Given $f, g in C^1([a, b])$, then there exists $xi in (a, b)$ such that
+
+  $ (f(b) - f(a)) g^prime (xi) = (g(b) - g(a)) f^prime (xi). $
+
+  If $g(a) eq.not g(b)$ and $g(xi) eq.not 0$, this is equivalent to
+
+  $ (f^prime (xi)) / (g^prime (xi)) = (f(b) - f(a)) / (g(b) - g(a)). $
+]
+
+#env("Theorem", name: "First mean value theorems for definite integrals")[
+  Given $f in C([a, b])$ and $g$ integrable and does not change sign on $[a, b]$, then there exists $xi$ in $(a, b)$ such that
+
+  $ integral_a^b f(x) g(x) upright(d) x = f(xi) integral_a^b g(x) upright(d) x. $
+]
+
+#env("Theorem", name: "Second mean value theorems for definite integrals")[
+  Given $f$ a integrable function and $g$ a positive monotonically decreasing function, then there exists $xi$ in $(a, b)$ such that
+
+  $ integral_a^b f(x) g(x) upright(d) x = g(a) integral_a^xi f(x) upright(d) x. $
+
+  If $g$ is a positive monotonically increasing function, then there exists $xi$ in $(a, b)$ such that
+
+  $ integral_a^b f(x) g(x) upright(d) x = g(b) integral_xi^b f(x) upright(d) x. $
+
+  If $g$ is a monotonically function, then there exists $xi$ in $(a, b)$ such that
+
+  $ integral_a^b f(x) g(x) upright(d) x = g(a) integral_a^xi f(x) upright(d) x + g(b) integral_xi^b f(x) upright(d) x. $
+]
+
+=== Series
+
+#env("Definition")[
+  A series $sum_(n=1)^infinity a_n$ is *absolute convergent* if the series of absolute values $sum_(n=1)^infinity |a_n|$ converges.
+]
+
+#env("Theorem")[
+  If a series is absolute convergent, then any reordering of it converges to the same limit.
+]
+
+#env("Theorem", name: "n-th term test")[
+  If $limits(lim)_(n -> infinity) a_n eq.not 0$, then the series divergent.
+]
+
+#env("Theorem", name: "Direct comparison test")[
+  If $sum_(n=1)^infinity b_n$ is convergent and exists $N > 0$, for all $n > N$, $0 lt.eq a_n lt.eq b_n$, then $sum_(n=1)^infinity a_n$ is convergent; if $sum_(n=1)^infinity b_n$ is divergent and exists $N > 0$, for all $n > N$, $0 lt.eq b_n lt.eq a_n$, then $sum_(n=1)^infinity a_n$ is divergent.
+]
+
+#env("Theorem", name: "Limit comparison test")[
+  Given two series $sum_(n=1)^infinity a_n$ and $sum_(n=1)^infinity b_n$ with $a_n gt.eq 0, b_n > 0$. Then if $limits(lim)_(n -> infinity) a_n / b_n = c in (0, infinity)$, then either both series converge or both series diverge.
+]
+
+#env("Theorem", name: "Ratio test")[
+  Given $sum_(n=1)^infinity a_n$ and
+
+  $ R = limsup_(n -> infinity) abs(a_(n+1) / a_n), r = liminf_(n -> infinity) abs(a_(n+1) / a_n), $
+
+  if $R < 1$, then the series converges absolutely; if $r > 1$, then the series diverges.
+]
+
+#env("Theorem", name: "Root test")[
+  Given $sum_(n=1)^infinity a_n$ and
+
+  $ R = limsup_(n -> infinity) (|a_n|)^(1/n), $
+
+  if $R < 1$, then the series converges absolutely; if $R > 1$, then the series diverges.
+]
+
+#env("Theorem", name: "Integral test")[
+  Given $sum_(n=1)^infinity f(n)$ where $f$ is monotone decreasing, then the series converges iff the improper integral
+
+  $ integral_1^infinity f(x) upright(d) x $
+
+  is finite. In particular,
+
+  $ integral_1^infinity f(x) upright(d) x lt.eq sum_(n=1)^infinity f(n) lt.eq f(1) + integral_1^infinity f(x) upright(d) x $
+]
+
+#env("Theorem", name: "Alternating series test")[
+  Given $sum_(n=1)^infinity (-1)^n a_n$ where $a_n$ are all positive or negative, then the series converges if $|a_n|$ decreases monotonically and $limits(lim)_(n -> infinity) a_n = 0$.
+]
+
+=== Multivariable calculus
+
+#env("Theorem", name: "Green's theorem")[
+  Let $Omega$ be the region in a plane with $partial Omega$ a positively oriented, piecewise smooth, simple closed curve. If $P$ and $Q$ are functions of $(x, y)$ defined on an open region containing $Omega$ and have continuous partial derivatives there, then
+
+  $ integral.cont_(partial Omega) (P upright(d) x + Q upright(d) y) = integral.double_Omega ((partial Q) / (partial x) - (partial P) / (partial y)) upright(d) x upright(d) y $
+
+  where the path of integration along $C$ is anticlockwise.
+]
+
+#env("Theorem", name: "Stokes' theorem")[
+  Let $Omega$ be a smooth oriented surface in $RR^3$ with $partial Omega$ a piecewise smooth, simple closed curve. If $mathbf(F) (x,y,z) = (F_x (x,y,z), F_y (x,y,z), F_z (x,y,z))$ is defined and has continuous first order partial derivatives in a region containing $Omega$, then
+
+  $ integral.double_Omega (nabla times mathbf(F)) dot.c upright(d) S(x) = integral.cont_(partial Omega) mathbf(F) dot.c upright(d) x $
+]
+
+#env("Theorem", name: "Gauss-Green theorem (Divergence theorem)")[
   For a bounded open set $Omega in RR^n$ that $partial Omega in C^1$ and a function $mathbf(F)(mathbf(x)) = (F_1 (mathbf(x)), dots, F_n (mathbf(x))): overline(Omega)-> RR^n$ satisfies $mathbf(F)(mathbf(x)) in C^1(Omega) sect C(overline(Omega))$,
 
   $ integral_Omega "div" mathbf(F)(mathbf(x)) upright(d) mathbf(x) = integral_(partial Omega) mathbf(F)(mathbf(x)) dot mathbf(n) upright(d) S(x), $
 
   where $mathbf(n)$ is outward pointing unit normal vector at $partial Omega$.
+]
+
+#env("Definition")[
+  An *implicit function* is a function of the form
+
+  $ F(x_1, dots, x_n) = 0, $
+
+  where $x_1, dots, x_n$ are variables.
+]
+
+#env("Theorem")[
+  Let $F(mathbf(x), mathbf(y)): RR^(n+m) -> RR^m$ be a differentiable function of two variables, and $(mathbf(x)_0, mathbf(y)_0)$ the point that $F(mathbf(x)_0, mathbf(y)_0) = mathbf(0)$. If the Jacobian matrix
+
+  $ J_(F, mathbf(y)) (mathbf(x)_0, mathbf(y)_0) = ((partial F_i) / (partial y_j) (mathbf(x)_0, mathbf(y)_0)) $
+
+  is invertible, then there exists an open set $Omega subset.eq RR^n$ containing $mathbf(x)_0$ such that there exists a unique function $f: Omega -> RR^m$ such that $f(mathbf(x)_0) = mathbf(y)_0$ and $F(mathbf(x), f(mathbf(y))) = mathbf(0)$ for all $mathbf(x) in Omega$.
+
+  Moreover, $f$ is continuously differentiable and, denoting the left-hand panel of the Jacobian matrix shown in the previous section as
+
+  $ J_(F, mathbf(x)) (mathbf(x)_0, mathbf(y)_0) = ((partial F_i) / (partial x_j) (mathbf(x)_0, mathbf(y)_0)), $
+
+  the Jacobian matrix of partial derivatives of $f$ in $Omega$ is given by
+
+  $ ((partial f_i) / (partial x_j) (mathbf(x)))_(m times n) = -(J_(F, mathbf(y)) (mathbf(x), f(mathbf(x))))_(m times m)^(-1) (J_(F, mathbf(x)) (mathbf(x), f(mathbf(x))))_(m times n) . $
 ]
 
 == Important Inequalities
