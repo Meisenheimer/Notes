@@ -6,7 +6,7 @@
 
 Most of the notes are from my undergraduate and postgraduate courses and written in Typst (https://typst.app/). There are only **useful** (in my opinion) definitions and theorems so that I can focus on coding or analysis instead of the proof.
 
-你可以将这一讲义用于其他用途，但我不保证其中的正确性。
+你可以将这一讲义用于其他用途，*但我不保证其中的正确性*。
 
 Please feel free if you want to use them, **but there's no guarantee of correctness.**
 
