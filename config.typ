@@ -248,27 +248,33 @@
     #pagebreak(weak: true)
     #set text(size: large-size)
     #if language == "cn" [
-      #hide(
-        heading(
-          level: 1,
-          numbering: none,
-          supplement: none,
-          outlined: true,
-          bookmarked: true,
-          "目录")
-      )
+      #{
+        show heading: none
+        hide(
+          heading(
+            level: 1,
+            numbering: none,
+            supplement: none,
+            outlined: true,
+            bookmarked: true,
+            "目录")
+        )
+      }
       #outline(title: [目录], depth: 3, indent: true)
     ]
     #if language == "en" [
-      #hide(
-        heading(
-          level: 1,
-          numbering: none,
-          supplement: none,
-          outlined: true,
-          bookmarked: true,
-          "Contents")
-      )
+      #{
+        show heading: none
+        hide(
+          heading(
+            level: 1,
+            numbering: none,
+            supplement: none,
+            outlined: true,
+            bookmarked: true,
+            "Contents")
+        )
+      }
       #outline(title: [Contents], depth: 3, indent: true)
     ]
     #pagebreak(weak: true)
@@ -323,7 +329,7 @@
         bookmarked: true,
         title)
     )
-    #v(15em, weak: true)
+    #v(20em, weak: true)
     #set text(size: Huge-size, weight: "bold")
     Part #counter("part").display("1") \
     #v(1em, weak: true)
