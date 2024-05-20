@@ -19,7 +19,7 @@
 #env("Definition")[
   A ODE is *linear* if can be written as
 
-  $ sum_(i=0)^(n) A_(i)(t) mathbf(u)^((n)) + mathbf(r)(t) = mathbf(0), $
+  $ sum_(i=0)^(n) A_(i)(t) mathbf(u)^((i)) + mathbf(r)(t) = mathbf(0), $
 
   where $A_(i)(t)$ and $r(t)$ are continuous functions of $t$.
 ]
