@@ -74,26 +74,37 @@
   ) $
 ]
 
-// == Exact solutions
+== Exact solutions
 
-// #env("Example")[
-//   Given an initial point $(y_0, x_0)$, and a separable equation
+#env("Example")[
+  Given an initial point $(y_0, x_0)$, and a separable equation
 
-//   $ P_1(x) Q_1(y) = P_2(x) Q_2(y) (upright(d) y)/(upright(d) x), $
+  $ P_1(x) Q_1(y) = P_2(x) Q_2(y) (upright(d) y)/(upright(d) x), $
 
-//   the solution of the equation is
+  the solution of the equation is
 
-//   $ integral_(x_0)^x (P_1(t))/(P_2(t)) upright(d) t = integral_(y_0)^y (Q_2(t))/(Q_1(t)) upright(d) t. $
-// ]
+  $ integral_(x_0)^x (P_1(t))/(P_2(t)) upright(d) t = integral_(y_0)^y (Q_2(t))/(Q_1(t)) upright(d) t. $
+]
 
-// #env("Example")[
-//   Given an initial point $(y_0, x_0)$, and a first-order homogeneous equation
+#env("Example")[
+  Given an initial point $(y_0, x_0)$, and a first-order homogeneous equation
 
-//   $ (upright(d) y)/(upright(d) x) = F(y/x), $
+  $ (upright(d) y)/(upright(d) x) = F(y/x), $
 
-//   the solution of the equation is
+  the solution of the equation is
 
-//   $ ln(C x) = integral_(y_0 / x_0)^(y / x) 1 / (F(t) - t) upright(d) t, $
+  $ integral_(x_0)^x 1/x upright(d) x = integral_(y_0 / x_0)^(y / x) 1 / (F(t) - t) upright(d) t. $
+]
 
-//   where $C$ is a constant.
-// ]
+#env("Example")[
+  Given an initial point $(y_0, x_0)$, and a first-order separable equation
+
+  $ y M(x y) + x N(x y) (partial y)/(partial x) = 0, $
+
+  the solution of the equation is
+
+  $ integral_(x_0)^x 1/x upright(d) x = integral_(y_0 x_0)^(y x) N(t) / (t(N(t) - M(t))) upright(d) t, $
+
+  where $C$ is a constant.
+]
+
