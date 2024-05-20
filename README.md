@@ -8,5 +8,5 @@ Most of the notes are from my undergraduate and postgraduate courses and written
 你可以将这一讲义用于其他用途，*但我不保证其中的正确性*。
 Please feel free if you want to use them, **but there's no guarantee of correctness.**
 
-如果你发现了任何错误或右任何建议，可以通过zeyu.wang.0117@outlook.com联系我。
+如果你发现了任何错误或有任何建议，可以通过zeyu.wang.0117@outlook.com联系我。
 Please let me know if there are bugs or suggestions, and my email is zeyu.wang.0117@outlook.com.
