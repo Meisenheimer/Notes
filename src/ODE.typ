@@ -108,3 +108,56 @@
   where $C$ is a constant.
 ]
 
+#env("Example")[
+  Given a $n$th-order, linear, inhomogeneous, constant coefficients equation
+
+  $ sum_(i=0)^n a_i (partial^i y)/(partial x^i) = 0, $
+
+  the solution of the equation is
+
+  $ sum_(i=1)^k (sum_(j=1)^(m_i) c_(i j) x^(j-1)) e^(alpha_i x), $
+
+  where ${c_(i j)}$ are constants and $alpha_i$ is the root of
+
+  $ sum_(i=0)^n a_i x^i = 0 $
+
+  that repeated $m_i$ times.
+]
+
+== Important ODEs
+
+=== Bernoulli differential equation
+
+#env("Definition")[
+  The *Bernoulli differential equation* takes the form
+
+  $ y^prime + P(x) y = Q(x) y^n, $
+
+  where $n eq.not 0, 1$.
+]
+
+#env("Theorem")[
+  The solution of the Bernoulli differential equation is
+
+  $ y = (z(x))^(1/(1 - n)), $
+
+  where $z(x)$ is the solution of
+
+  $ z^prime + (1 - n) P(x) z + (1 - n) Q(x) = 0. $
+]
+
+=== Riccati equation
+
+#env("Definition")[
+  The *Riccati equation* takes the form
+
+  $ y^prime = q_0 (x) + q_1 (x) y + q_2 (x) y^2, $
+
+  where $q_0(x) eq.not 0, q_2(x) eq.not 0$.
+]
+
+#env("Theorem")[
+  If $u$ is one particular solution of the Riccati equation, the general solution is obtained as $y = u + 1 / v$, where $v$ satisfies
+
+  $ v^prime + (q_1 (x) + 2 q_2 (x) u) v + q_2(x). $
+]
