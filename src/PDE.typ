@@ -35,7 +35,7 @@
 
   $ - Delta u = f(mathbf(x)), $
 
-  where $nabla$ is the Laplace operator, $u, f: RR^n -> RR$ and $mathbf(x) in RR^n$.
+  where $Delta$ is the Laplace operator, $u, f: RR^n -> RR$ and $mathbf(x) in RR^n$.
 ]
 
 == Heat Equation
@@ -45,7 +45,7 @@
 
   $ (partial u)/(partial t) - a^2 Delta u = f(mathbf(x), t), $
 
-  where $nabla$ is the Laplace operator on $RR^n$, $u, f: RR^n times RR -> RR$ and $mathbf(x) in RR^n$.
+  where $Delta$ is the Laplace operator on $RR^n$, $u, f: RR^n times RR -> RR$ and $mathbf(x) in RR^n$.
 ]
 
 == Wave Equation
@@ -55,5 +55,5 @@
 
   $ (partial^2 u)/(partial t^2) - a^2 Delta u = f(mathbf(x), t), $
 
-  where $nabla$ is the Laplace operator on $RR^n$, $u, f: RR^n times RR -> RR$ and $mathbf(x) in RR^n$.
+  where $Delta$ is the Laplace operator on $RR^n$, $u, f: RR^n times RR -> RR$ and $mathbf(x) in RR^n$.
 ]
