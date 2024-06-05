@@ -38,10 +38,6 @@
   where $Delta$ is the Laplace operator, $u, f: RR^n -> RR$ and $mathbf(x) in RR^n$.
 ]
 
-#env("Theorem")[
-
-]
-
 == Heat Equation
 
 #env("Definition")[
