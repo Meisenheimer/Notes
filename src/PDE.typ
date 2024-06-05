@@ -39,7 +39,7 @@
 ]
 
 #env("Theorem")[
-  
+
 ]
 
 == Heat Equation
@@ -55,7 +55,7 @@
 == Wave Equation
 
 #env("Definition")[
-  A *Heat equation* in $RR^n times RR$ takes the form
+  A *Wave equation* in $RR^n times RR$ takes the form
 
   $ (partial^2 u)/(partial t^2) - a^2 Delta u = f(mathbf(x), t), $
 
