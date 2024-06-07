@@ -1,13 +1,13 @@
-#let tiny-size =	6pt
-#let script-size =	8pt
-#let footnote-size =	9pt
-#let small-size =	10pt
+#let tiny-size =  6pt
+#let script-size =  8pt
+#let footnote-size =  9pt
+#let small-size = 10pt
 #let normal-size = 10.95pt
-#let large-size =	12pt
-#let Large-size =	14.4pt
-#let LARGE-size =	17.28pt
-#let huge-size =	20.74pt
-#let Huge-size =	24.88pt
+#let large-size = 12pt
+#let Large-size = 14.4pt
+#let LARGE-size = 17.28pt
+#let huge-size =  20.74pt
+#let Huge-size =  24.88pt
 
 #let project(
   papersize: "a4", // 21(cm) * 29.7(cm)
@@ -128,7 +128,9 @@
     ..authors_parsed.authors.map(author => align(center)[
       #set text(size: Large-size)
       #author.name
-      #footnote[Email: #link("mailto:" + authors_parsed.corresponding.email, authors_parsed.corresponding.email)] \
+      #if author.email != none [
+        #footnote[Email: #link("mailto:" + authors_parsed.corresponding.email, authors_parsed.corresponding.email)] \
+      ]
       #if author.institude != none [
         #set text(size: large-size)
         #author.institude
