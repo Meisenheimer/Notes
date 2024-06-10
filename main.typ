@@ -8,7 +8,7 @@
   authors: (
     (
       name: "Zeyu Wang",
-      email: "zeyuwang@zuaa.zju.edu.cn",
+      email: "zeyu.wang.0117@outlook.com",
       institude: none,
       corresponding: true,
     ),
