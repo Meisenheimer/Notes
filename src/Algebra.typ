@@ -1,4 +1,4 @@
-#import "../config.typ": env, mathbf
+#import "../book.typ": env, mathbf
 
 = Algebra
 
@@ -297,8 +297,6 @@
 #env("Definition", name: "Hilbert space")[
   A *Hilbert space* is a inner product space that is also ce with respect to the distance function induced by the inner product.a complete metric space.
 ]
-
-#import "../config.typ": env, mathbf
 
 == Single Variable Polynomial
 

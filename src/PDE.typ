@@ -1,4 +1,4 @@
-#import "../config.typ": env, mathbf
+#import "../book.typ": env, mathbf
 
 = Partial Differential Equation
 

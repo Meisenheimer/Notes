@@ -1,6 +1,6 @@
-#import "config.typ": *
+#import "book.typ": *
 
-#show: project.with(
+#show: book.with(
   title: "Handbook of Applied Mathematics",
   language: "en",
   show_outline: true,
