@@ -208,7 +208,7 @@
 
   \ *Integral form.* For integrable functions $f, g in L^2(Omega)$,
 
-  $ integral_Omega f^2(x) upright(d) x + integral_Omega g^2(x) upright(d) x >= ( integral_Omega f(x) g(x) upright(d) x )^2. $
+  $ (integral_Omega f^2(x) upright(d) x) (integral_Omega g^2(x) upright(d) x) >= ( integral_Omega f(x) g(x) upright(d) x )^2. $
 
   Equality holds iff $exists k in RR, " s.t. " k f(x) = g(x) " or " f(x) = k g(x)$.
 ]
@@ -222,9 +222,9 @@
 
   Equality holds iff $exists c_1, c_2 in RR, c_1^2 + c_2^2 eq.not 0, " s.t. " c_1 a_i^p = c_2 b_i^q$.
 
-  \ *Integral form.* For functions $f in L^p (Omega), g in L^q (Omega)$ and $p, q in [1, +infinity)$ that $(1/p) + (1/q) = 1$,
+  \ *Integral form.* For functions $f in L^p (Omega), g in L^q (Omega)$ and $p, q in [1, +infinity)$ that $1/p + 1/q = 1$,
 
-  $ ( integral_Omega |f(x)|^p upright(d) x )^(1/p) + ( integral_Omega |g(x)|^q upright(d) x )^(1/q) >= integral_Omega f(x) g(x) upright(d) x. $
+  $ ( integral_Omega |f(x)|^p upright(d) x )^(1/p) ( integral_Omega |g(x)|^q upright(d) x )^(1/q) >= integral_Omega f(x) g(x) upright(d) x. $
 ]
 
 === Young's inequality
