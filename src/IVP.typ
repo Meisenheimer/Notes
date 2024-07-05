@@ -274,7 +274,7 @@
       $0$, table.vline(), $0$, $0$, $0$,
       $1/3$, table.vline(), $1/3$, $0$, $0$,
       $2/3$, table.vline(), $0$, $2/3$, $0$,
-      table.hline(), table.hline(), table.hline(), table.hline(),
+      table.hline(),
       "", table.vline(), $1/4$, $0$, $3/4$,
     ) $
 ]
@@ -299,8 +299,40 @@
       $1/2$, table.vline(), $1/2$, $0$, $0$, $0$,
       $1/2$, table.vline(), $0$, $1/2$, $0$, $0$,
       $1$, table.vline(), $0$, $0$, $1$, $0$,
-      table.hline(), table.hline(), table.hline(), table.hline(),
+      table.hline(),
       "", table.vline(), $1/6$, $1/3$, $1/3$, $1/6$,
+    ) $
+]
+
+=== Third-order strong-stability preserving RK method
+
+#env("Definition")[
+    The *third-order strong-stability preserving RK method* is an ERK method of the form
+
+    $ cases(
+      & mathbf(y)_1 & = mathbf(u)_n + k mathbf(f)(mathbf(u)_n, t_n)\,,
+      & mathbf(y)_2 & = 3/4 mathbf(u)_n + 1/4 mathbf(y)_1 + 1/4 k mathbf(f)(mathbf(y)_1, t_n + k)\,,
+      & mathbf(u)_(n+1) & = 1/3 mathbf(u)_n + 2/3 mathbf(y)_2 + 2/3 k mathbf(f)(mathbf(y)_2, t_n + k/2)\.
+    ) #h(1em)
+    $
+
+    which can also be written as
+
+    $ cases(
+      & mathbf(y)_1 & = mathbf(f)(mathbf(u)_n, t_n)\,,
+      & mathbf(y)_2 & = mathbf(f)(mathbf(u)_n + k mathbf(y)_1, t_n + k)\,,
+      & mathbf(y)_3 & = mathbf(f)(mathbf(u)_n + 1/4 k mathbf(y)_1 + 1/4 k mathbf(y)_2, t_n + 1/2)\,,
+      & mathbf(u)_(n+1) & = mathbf(u)_n + k/6 (mathbf(y)_1 + mathbf(y)_2 + 4 mathbf(y)_3).
+    ) #h(1em)
+    #table(
+      columns: (auto, auto, auto, auto),
+      stroke: none,
+      align: center + horizon,
+      $0$, table.vline(), $0$, $0$, $0$,
+      $1$, table.vline(), $1$, $0$, $0$,
+      $1/2$, table.vline(), $1/4$, $1/4$, $0$,
+      table.hline(),
+      "", table.vline(), $1/6$, $1/6$, $2/3$
     ) $
 ]
 
