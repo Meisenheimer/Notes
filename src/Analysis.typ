@@ -146,6 +146,28 @@
   $ ((partial f_i) / (partial x_j) (mathbf(x)))_(m times n) = -(J_(F, mathbf(y)) (mathbf(x), f(mathbf(x))))_(m times m)^(-1) (J_(F, mathbf(x)) (mathbf(x), f(mathbf(x))))_(m times n) . $
 ]
 
+== Real Analysis
+
+=== Lebesgue Measure
+
+#env("Definition")[
+  Given an bounded interval $I$, denoted by $cal(l)(I)$ the *length* of the interval defined as the distance of its endpoints,
+
+  $ cal(l)([a, b]) = cal(l)((a, b)) = b - a. $
+]
+
+#env("Definition")[
+  For any subset $E subset RR$, the *Lebesgue outer measure* $m^*(E)$ is defined as
+
+  $ m^*(E) = inf { sum_(i=1)^n cal(l)(I_i): {I_i}_(i=1)^n " is a sequence of open intervals that " E subset union.big_(i=1)^n I_i }. $
+]
+
+#env("Theorem")[
+  - If $E_1 subset E_2$, then $m^*(E_1) lt.eq m^*(E_2)$;
+  - Given an interval $I$, $m^*(I) = cal(l)(I)$;
+  - Given ${E_i subset RR}_(i=1)^n$, $m^*(union.big_(i=1)^n E_i) lt.eq sum_(i=1)^n m^*(E_i)$.
+]
+
 == Important Inequalities
 
 === Fundamental inequality
