@@ -151,7 +151,7 @@
 === Lebesgue Measure
 
 #env("Definition")[
-  Given an bounded interval $I$, denoted by $cal(l)(I)$ the *length* of the interval defined as the distance of its endpoints,
+  Given an bounded interval $I in RR$, denoted by $cal(l)(I)$ the *length* of the interval defined as the distance of its endpoints,
 
   $ cal(l)([a, b]) = cal(l)((a, b)) = b - a. $
 ]
@@ -163,9 +163,34 @@
 ]
 
 #env("Theorem")[
-  - If $E_1 subset E_2$, then $m^*(E_1) lt.eq m^*(E_2)$;
-  - Given an interval $I$, $m^*(I) = cal(l)(I)$;
-  - Given ${E_i subset RR}_(i=1)^n$, $m^*(union.big_(i=1)^n E_i) lt.eq sum_(i=1)^n m^*(E_i)$.
+  If $E_1 subset E_2 subset RR$, then $m^*(E_1) lt.eq m^*(E_2)$.
+]
+
+#env("Theorem")[
+  Given an interval $I subset RR$, $m^*(I) = cal(l)(I)$.
+]
+
+#env("Theorem")[
+  Given ${E_i subset RR}_(i=1)^n$, $m^*(union.big_(i=1)^n E_i) lt.eq sum_(i=1)^n m^*(E_i)$.
+]
+
+#env("Definition")[
+  The sets $E$ are said to be *Lebesgue-measurable* if
+
+  $ forall A subset RR, m^*(A) = m^*(A sect X) + m^*(A sect (RR backslash A)) $
+
+  and its Lebesgue measure is defined as its Lebesgue outer measure: $m(E) = m^*(E)$.
+]
+
+#env("Theorem")[
+  The set of all measurable sets $E subset RR$ forms a $sigma$-algebra $cal(F)$ where
+  - $cal(F)$ contains the sample space: $RR in cal(F)$;
+  - $cal(F)$ is closed under complements: if $A in cal(F)$, then also $(RR backslash A) in cal(F)$;
+  - $cal(F)$ is closed under countable unions: if $A_i in cal(F), i = 1, dots$, then also $(union_(i=1)^infinity A_i) in cal(F)$.
+]
+
+#env("Definition")[
+  A *measurable space* is a tuple $(X, cal(F))$ consisting of an arbitrary non-empty set $X$ and a $sigma$-algebra $cal(F) subset.eq 2^X$.
 ]
 
 == Important Inequalities
