@@ -193,6 +193,39 @@
   A *measurable space* is a tuple $(X, cal(F))$ consisting of an arbitrary non-empty set $X$ and a $sigma$-algebra $cal(F) subset.eq 2^X$.
 ]
 
+== Complex Analysis
+
+#env("Definition")[
+  Given an open set $Omega$ and a function $f(z): Omega -> CC$, the *derivative* of $f(z)$ at a point $z_0 in Omega$ is defined as the limits
+
+  $ f^prime (z) = lim_(z -> z_0) (f(z) - f(z_0))/(z - z_0), $
+
+  and the function is said to be *complex differentiable* at $z_0$.
+]
+
+#env("Definition")[
+  A function $f(z)$ is holomorphic on an open set $Omega$ if it is complex differentiable at every point of $Omega$.
+]
+
+#env("Theorem")[
+  If a complex function $f(x + mathbf(i) y) = u(x, y) + mathbf(i) v(x, y)$ is holomorphic, then $u$ and $v$ have first partial derivatives, and satisfy the Cauchy–Riemann equations,
+
+  $ (partial u)/(partial x) = (partial v)/(partial y) " and " (partial u)/(partial y) = (partial v)/(partial x), $
+
+  or equivalently,
+
+  $ (partial f) / (partial overline(z)) = 0. $
+]
+
+#env("Theorem", name: "Cauchy's integral theorem")[
+  Given a simply connected domain $Omega$ and a holomorphic function $f(z)$ on it, for any simply closed contour $C$ in $Omega$,
+
+  $ integral_C f(z) upright(d) x = 0. $
+]
+
+// #env("Theorem", name: "Cauchy's integral formula")[
+// ]
+
 == Important Inequalities
 
 === Fundamental inequality
