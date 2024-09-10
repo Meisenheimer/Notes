@@ -226,6 +226,16 @@
 // #env("Theorem", name: "Cauchy's integral formula")[
 // ]
 
+#env("Theorem", name: "Residue formula")[
+  Suppose that $f$ is holomorphic in an open set containing a toy contour $gamma$ and its interior, except for some points $z_1, dots, z_n$ inside $gamma$, then
+
+  $ integral_gamma f(z) upright(d) z = 2 pi mathbf(i) sum_(k=1)^n upright("res")_(z_k) f, $
+
+  where for a pole $z_0$ of order $n$,
+
+  $ upright("res")_(z_0) f = lim_(z -> z_0) 1/((n-1)!) (upright(d)/(upright(d)z))^(n-1) (z - z_0)^n f(z). $
+]
+
 == Important Inequalities
 
 === Fundamental inequality
