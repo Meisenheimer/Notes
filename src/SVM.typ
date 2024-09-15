@@ -1,3 +1,3 @@
-#import "../book.typ": env, mathbf
+#import "@local/book:1.0.0": env, mathbf
 
 = Support Vector Machine

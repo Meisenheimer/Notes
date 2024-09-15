@@ -1,4 +1,4 @@
-#import "book.typ": *
+#import "@local/book:1.0.0": *
 
 #show: book.with(
   title: "Handbook of Applied Mathematics",
