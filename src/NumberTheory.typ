@@ -1,4 +1,4 @@
-#import "@local/book:1.0.0": env, mathbf
+#import "@local/math:1.0.0": *
 
 = Number Theory
 

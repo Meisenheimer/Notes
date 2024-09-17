@@ -1,4 +1,4 @@
-#import "@local/book:1.0.0": env, mathbf
+#import "@local/math:1.0.0": *
 
 = Algebra
 
@@ -218,9 +218,9 @@
 #env("Definition", name: "Norm")[
   For a linear space $V$ over a field $FF$, the *norm* is a function $||dot.c||: V -> FF$ that satisfies
 
-  + Positive definiteness: $forall mathbf(x) in V, ||mathbf(x)|| >= 0$, $||mathbf(x)|| = 0 <=> mathbf(x) = 0$,
-  + Absolute homogeneity: $forall mathbf(x) in V, k in FF, ||k mathbf(x)|| = |k| ||mathbf(x)||$,
-  + Triangle inequality: $forall mathbf(x), mathbf(y) in V, ||mathbf(x)|| + ||mathbf(y)|| >= ||mathbf(x) + mathbf(y)||$,
+  + Positive definiteness: $forall mathbf(x) in V, ||mathbf(x)|| >= 0$, $||mathbf(x)|| = 0 <=> mathbf(x) = 0$;
+  + Absolute homogeneity: $forall mathbf(x) in V, k in FF, ||k mathbf(x)|| = |k|""||mathbf(x)||$;
+  + Triangle inequality: $forall mathbf(x), mathbf(y) in V, ||mathbf(x)|| + ||mathbf(y)|| >= ||mathbf(x) + mathbf(y)||$.
 ]
 
 #env("Definition", name: "Normed space")[
