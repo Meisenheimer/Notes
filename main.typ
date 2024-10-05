@@ -1,6 +1,7 @@
-#import "@local/book:1.0.0": *
+#import "@local/doc:1.0.0": *
 
-#show: book.with(
+#show: doc.with(
+  documentclass: "book",
   title: "Handbook of Applied Mathematics",
   language: "en",
   show_outline: true,
