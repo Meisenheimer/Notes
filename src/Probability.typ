@@ -89,6 +89,57 @@
   $ f_X (x) = sum_(overline(x) in "Range"(X)) p_X (x) delta(x - overline(x)). $
 ]
 
+=== Multivariate distributions
+
+#env("Definition")[
+  A *random vector* is a vector $(X_1, dots, X_n)$ where all $X_k$ are random variables.
+]
+
+#env("Definition")[
+  The *joint cdf* of a random vector $(X_1, dots, X_n)$ is defined as
+
+  $ F_(X_1, dots, X_n) (x_1, dots, x_n) = P(X_1 lt.eq x_1, dots, X_n lt.eq x_n). $
+]
+
+#env("Definition")[
+  The *joint pmf* of a random vector $(X_1, dots, X_n)$ is defined as
+
+  $ p_(X_1, dots, X_n) (x_1, dots, x_n) = P(X_1 = x_1, dots, X_n = x_n). $
+]
+
+#env("Definition")[
+  The *joint pdf* of a random vector $(X_1, dots, X_n)$ is defined as
+
+  $ f_(X_1, dots, X_n) (x_1, dots, x_n) = (partial F_(X_1, dots, X_n) (x_1, dots, x_n))/(partial x_1 dots.c partial x_n). $
+]
+
+#env("Theorem")[
+  A random vector $(X_1, dots, X_n)$ satisfies
+
+  + $F_(X_1, dots, X_(n-1)) (x_1, dots, x_(n-1)) = F_(X_1, dots, X_n) (x_1, dots, x_(n-1), +infinity)$;
+
+  + $p_(X_1, dots, X_(n-1)) (x_1, dots, x_(n-1)) = sum_(x in "Range"(X_n)) p_(X_1, dots, X_n) (x_1, dots, x_(n-1), x) #h(1em) ("discrete case")$;
+
+  + $f_(X_1, dots, X_(n-1)) (x_1, dots, x_(n-1)) = integral_(-infinity)^(+infinity) f_(X_1, dots, X_n) (x_1, dots, x_(n-1), x) upright(d) x #h(1em) ("continuous case")$;
+
+  + $p_(X_1, dots, X_n | X_1) (x_1, dots, x_n | x_1) = (p_(X_1, dots, X_n) (x_1, dots, x_n)) / (p_(X_1) (x_1)) #h(1em) ("discrete case")$;
+
+  + $f_(X_1, dots, X_n | X_1) (x_1, dots, x_n | x_1) = (f_(X_1, dots, X_n) (x_1, dots, x_n)) / (f_(X_1) (x_1)) #h(1em) ("continuous case")$.
+]
+
+#env("Theorem")[
+  Given two random vectors $X = (X_1, dots, X_n)$ and $Y = (Y_1, dots, Y_n)$ and a series of bijection ${g_i}$ that $X_i = g_i(Y_i)$, then
+
+  $ f_(Y_1, dots, Y_n) (y_1, dots, y_n) = f_(X_1, dots, X_n) (g_1(y_1, dots, y_n), dots, g_n (y_1, dots, y_n)) abs((partial (x_1, dots, x_n))/(partial (y_1, dots, y_n))). $
+]
+
+#env("Theorem")[
+  Two random vectors $X = (X_1, dots, X_n)$ and $Y = (Y_1, dots, Y_n)$ are mutually independent iff
+
+  $ cases(p_(X_1, X_2) (x_1, x_2) = p_(X_1) (x_1) p_(X_2) (x_2)\, & #h(1em) ("discrete case")\,,
+  f_(X_1, X_2) (x_1, x_2) = f_(X_1) (x_1) f_(X_2) (x_2)\, & #h(1em) ("continuous case")\.) $
+]
+
 === Distributional quantities
 
 #env("Definition")[
