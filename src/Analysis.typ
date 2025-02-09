@@ -4,6 +4,166 @@
 
 == Calculus
 
+#env("Definition")[
+  A number $x$ is a *lower bound* of a nonempty set $S$ if $forall s in S, x lt.eq s$.
+]
+
+#env("Definition")[
+  A number $x$ is a *upper bound* of a nonempty set $S$ if $forall s in S, x gt.eq s$.
+]
+
+#env("Definition")[
+  Let $S$ be a nonempty set, denoted by $inf S$ the *infimum* of $S$ where
+
+  + $forall s in S, s gt.eq inf S$;
+
+  + $forall y gt inf S, exists s in S " s.t. " s lt y$.
+]
+
+#env("Definition")[
+  Let $S$ be a nonempty set, denoted by $inf S$ the *supremum* of $S$ where
+
+  + $forall s in S, s lt.eq sup S$;
+
+  + $forall y lt sup S, exists s in S " s.t. " s gt y$.
+]
+
+#env("Theorem")[
+  Let $S_1 subset.eq S_2$, then $inf S_1 gt.eq inf S_2, sup S_1 lt.eq sup S_2$.
+]
+
+#env("Corollary")[
+  $ inf emptyset = +infinity, sup emptyset = -infinity.$
+]
+
+#env("Theorem")[
+  A set $Omega$ is *closed* if it contains all the limits of convergent sequences of points in $Omega$.
+]
+
+#env("Definition")[
+  A set $Omega$ is *bounded* if there exists $R in RR^+$ such that $Omega subset.eq {mathbf(x) in RR^n: norm(mathbf(x)) lt.eq R}$.
+]
+
+#env("Theorem", name: "Bolzano-Weierstrass")[
+  Let $Omega subset RR^n$ a bounded closed set. If ${mathbf(x)^([k])}_(k=1)^infinity subset.eq Omega$, then there exists $mathbf(x)^* in Omega$ and a subsequence ${mathbf(x)^([k_i])}_(i=1)^infinity$ such that
+
+  $ lim_(i -> infinity) mathbf(x)^([k_i]) = mathbf(x)^*. $
+]
+
+#env("Definition")[
+  A bounded closed set in $RR^n$ is called a *compact set*.
+]
+
+#env("Theorem")[
+  Let $Omega$ be a nonempty set and $f in C(Omega)$, then $f$ achieves its infimum and supremum over $Omega$, i.e.
+
+  $ exists x, y in Omega, f(x) = inf_Omega f, f(y) = sup_Omega f. $
+]
+
+#env("Theorem", name: "Rolle's theorem")[
+  Let $f in C([a, b]) inter C^1((a, b))$, if $f(a) = f(b)$, then there exists a point $xi in (a, b)$ such that $f^prime (xi) = 0$.
+]
+
+#env("Theorem", name: "Generalized Rolle's theorem")[
+  Given $n gt.eq 2$ and $f in C^(n-1)([a, b])$ with $f^((n))(x)$ exists at each point of $(a, b)$, if $f(x_0) = dots.c f(x_n) = 0$ for $a lt.eq x_0 < dots.c < x_n lt.eq b$, then there exists a point $xi in (a, b)$ such that $f^((n))(xi) = 0$.
+]
+
+#env("Theorem", name: "Taylor’s theorem with remainder term")[
+  Let $f$ be $n+1$ times differentiable on an open interval containing $[a, b]$, then there exists $xi in (a, b)$,
+
+  $ f(b) = sum_(k=0)^n (f^((k))(a))/(k!) (b - a)^k + (f^((n+1))(xi))/((n+1)!) (b - a)^(n+1) $
+]
+
+#env("Theorem", name: "High-dimensional Taylor's theorem with remainder term")[
+  Let $f in C^1(RR^n), mathbf(x), mathbf(y) in RR^n$, then there exists $xi in (0, 1)$ such that
+
+  $ f(mathbf(y)) = f(mathbf(x)) + (gradient f((1 - xi) mathbf(x) + xi mathbf(y)))^T (mathbf(y) - mathbf(x)). $
+
+  Let $f in C^2(RR^n), mathbf(x), mathbf(y) in RR^n$, then there exists $xi in (0, 1)$ such that
+
+  $ f(mathbf(y)) = f(mathbf(x)) + (gradient f(mathbf(x)))^T (mathbf(y) - mathbf(x)) + (mathbf(y) - mathbf(x))^T gradient^2 f((1 - xi) mathbf(x) + xi mathbf(y)) (mathbf(y) - mathbf(x)). $
+]
+
+#env("Theorem")[
+  Let $f in C^2(RR^n)$ and there exists $L$ such that $L gt.eq norm(gradient^2 f(mathbf(x)))_2$ for all $x in RR^n$, then
+
+  $ forall mathbf(x), mathbf(y) in RR^n, norm(gradient f(u) - gradient f(v))_2 lt.eq L norm(mathbf(u) - mathbf(v))_2. $
+]
+
+#env("Theorem")[
+  Let $h in C^2(RR^m)$ and let $A in RR^(m times n)$, $mathbf(b) in RR^m$. Define $f(x) = h(A x - b)$ then $f in C^2(RR^n)$ and $gradient f(x) = A^T gradient h(A x - b)$, $gradient^2 f(x) = A^T gradient^2 h(A x - b) A$.
+]
+
+#env("Theorem", name: "Subdifferential inequality")[
+  Let $h$ be convex $C^1$, then
+
+  $ forall x, y in RR^n, h(y) - h(x) gt.eq (gradient h(x))^T (y - x). $
+]
+
+=== Convex sets and functions
+
+#env("Definition")[
+  A set $Omega subset.eq RR^n$ is said to be *convex* if for any $mathbf(x), mathbf(y) in Omega$, and $lambda in (0, 1)$, it holds that $lambda mathbf(x) + (1 - lambda) mathbf(y) in Omega$.
+]
+
+#env("Theorem")[
+  Let $Omega subset.eq RR^n$ be a nonempty closed convex set and $mathbf(y) in RR^n$, then there exists a unique solution to the following optimization problem:
+
+  $ min_(mathbf(x) in RR^n) 1/2 norm(mathbf(x) - mathbf(y))_2 " s.t. " mathbf(x) in Omega. $
+
+  The unique solution is called the projection of $mathbf(y)$ onto $Omega$, denoted by $P_Omega (y)$.
+]
+
+#env("Theorem")[
+  Let $Omega subset.eq RR^n$ be a nonempty closed convex set, $mathbf(y) in RR^n$ and $mathbf(u) in Omega$, then
+
+  $ (mathbf(y) - P_Omega (mathbf(y)))^T (mathbf(u) - P_Omega (mathbf(y))) lt.eq 0. $
+]
+
+#env("Theorem", name: "Separation")[
+  Let $Omega subset.eq RR^n$ be a nonempty closed convex set and $mathbf(y) in RR^n backslash Omega$, then there exists $mathbf(v) in RR^n backslash {0}$ and $alpha in RR$ so that
+
+  $ mathbf(v)^T mathbf(y) gt alpha gt mathbf(v)^T mathbf(u) $
+
+  for all $mathbf(u) in Omega$.
+]
+
+#env("Theorem")[
+  Let $A in RR^(m times n)$, then the set $S = {A mathbf(y): forall i = 1, dots, n, mathbf(y)_i gt.eq 0}$ is closed and convex.
+]
+
+#env("Definition")[
+  A function $f: RR^n -> RR union {infinity}$ is called
+
+  - Proper if $upright("dom")(f) = {mathbf(x): f(x) lt infinity} eq.not emptyset$;
+  - Convex if $upright("epi")(f) = {(mathbf(x), r): r gt.eq f(mathbf(x))}$ is convex;
+  - Closed if is lower semicontinuous $underline(lim)_(mathbf(x) -> mathbf(x)_0) f(mathbf(x)) gt.eq f(mathbf(x)_0)$ (same as $upright("epi")(f)$ is closed).
+]
+
+#env("Theorem")[
+  Let $f: RR^n -> RR union {infinity}$, it is convex iff for any $mathbf(u), mathbf(v) in RR^n$ and $lambda in (0, 1)$, it holds that
+
+  $ f(lambda mathbf(u) + (1 - lambda) mathbf(v)) lt.eq lambda f(mathbf(u)) + (1 - lambda) f(mathbf(v)). $
+]
+
+#env("Theorem", name: "First-order condition under convexity")[
+  Let $f in C^1(RR^n)$, if $f$ is convex and $gradient f(mathbf(x)) = 0$, then $mathbf(x)$ isa global minimizer of $f$.
+]
+
+#env("Theorem")[
+  Let $f in C^2(RR^n)$, then $f$ is convex iff $gradient^2 f(mathbf(x)) succ.eq 0$ for all $mathbf(x) in RR^n$.
+]
+
+#env("Proposition")[
+  Let $f: RR^n -> RR union {infinity}$, $g: RR^n -> RR union {infinity}$ both be convex, $A in RR^(n times p)$, $b in RR^n$, $H(mathbf(x)) = A mathbf(x) - b$ and $alpha gt 0$, then the following functions are convex:
+
+  $ f + g, " " alpha f, " " f circle.small H = f(A mathbf(x) - mathbf(b)), " " max{f, g}, " " norm(dot.c). $
+]
+
+#env("Proposition")[
+  Let $f: RR^n -> [0, +infinity)$ and $g: [0, +infinity) -> RR$ both be convex and non-decreasing, then $g circle.small f = g(f(mathbf(x)))$ is convex.
+]
+
 === Mean value theorem
 
 #env("Theorem", name: "Rolle's theorem")[
@@ -115,7 +275,7 @@
 ]
 
 #env("Theorem", name: "Gauss-Green theorem (Divergence theorem)")[
-  For a bounded open set $Omega in RR^n$ that $partial Omega in C^1$ and a function $mathbf(F)(mathbf(x)) = (F_1 (mathbf(x)), dots, F_n (mathbf(x))): overline(Omega)-> RR^n$ satisfies $mathbf(F)(mathbf(x)) in C^1(Omega) sect C(overline(Omega))$,
+  For a bounded open set $Omega in RR^n$ that $partial Omega in C^1$ and a function $mathbf(F)(mathbf(x)) = (F_1 (mathbf(x)), dots, F_n (mathbf(x))): overline(Omega)-> RR^n$ satisfies $mathbf(F)(mathbf(x)) in C^1(Omega) inter C(overline(Omega))$,
 
   $ integral_Omega "div" mathbf(F)(mathbf(x)) upright(d) mathbf(x) = integral_(partial Omega) mathbf(F)(mathbf(x)) dot mathbf(n) upright(d) S(x), $
 
@@ -177,7 +337,7 @@
 #env("Definition")[
   The sets $E$ are said to be *Lebesgue-measurable* if
 
-  $ forall A subset RR, m^*(A) = m^*(A sect X) + m^*(A sect (RR backslash A)) $
+  $ forall A subset RR, m^*(A) = m^*(A inter X) + m^*(A inter (RR backslash A)) $
 
   and its Lebesgue measure is defined as its Lebesgue outer measure: $m(E) = m^*(E)$.
 ]

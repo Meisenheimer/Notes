@@ -186,13 +186,13 @@
 
   then
 
-  $ sect.big_(k=0)^infinity S_k eq.not emptyset. $
+  $ inter.big_(k=0)^infinity S_k eq.not emptyset. $
 
-  where there is only one point $mathbf(x) in sect.big_(k=0)^infinity S_k$ for a complete metric space.
+  where there is only one point $mathbf(x) in inter.big_(k=0)^infinity S_k$ for a complete metric space.
 ]
 
 #env("Corollary")[
-  For decreasing sequence of nested non-empty compact, closed subsets $S_n in X, n in NN$ of a complete metric space and ${ mathbf(x) } = sect.big_(k=0)^infinity S_k$, then
+  For decreasing sequence of nested non-empty compact, closed subsets $S_n in X, n in NN$ of a complete metric space and ${ mathbf(x) } = inter.big_(k=0)^infinity S_k$, then
 
   $ forall epsilon > 0, exists N > 0, " s.t. " forall n > N, X_n subset U_X (x, epsilon). $
 ]
@@ -223,8 +223,128 @@
   + Triangle inequality: $forall mathbf(x), mathbf(y) in V, ||mathbf(x)|| + ||mathbf(y)|| >= ||mathbf(x) + mathbf(y)||$.
 ]
 
+#env("Definition", name: "Equivalent norms")[
+  Two norms $p(dot.c), q(dot.c)$ on $RR^n$ are called *equivalent* if
+
+  $ exists C_1, C_2 in RR^+ " s.t. " forall mathbf(x) in V, C_1 q(mathbf(x)) lt.eq p(mathbf(x)) lt.eq C_2 q(mathbf(x)). $
+]
+
 #env("Definition", name: "Normed space")[
   A *normed space* is a linear space $V$ over the the field $FF$ with a norm.
+]
+
+=== Vector norm and matrix norm
+
+#env("Example")[
+  The followings are some commonly used vector norms:
+
+  + $l_1$ norm: $norm(mathbf(x))_1 = sum_(i=1)^n |mathbf(x)_i|$;
+
+  + $l_2$ norm: $norm(mathbf(x))_2 = sqrt(sum_(i=1)^n abs(mathbf(x_i))^2)$;
+
+  + $l_infinity$ norm: $norm(mathbf(x))_infinity = max_(1 lt.eq i lt.eq n) |mathbf(x)_i|$.
+]
+
+#env("Theorem")[
+  Any two $l_p$ norms $norm(dot.c)_p, norm(dot.c)_q$ on $RR^n$ are equivalent.
+]
+
+// #proof[
+//   Let
+
+//   $ S = {mathbf(x) in RR^n: norm(mathbf(x))_q = 1} $
+
+//   a bounded closed set. From the continuousness of $l_p$ norm, there exists
+
+//   $ m = min_(mathbf(x) in S) norm(mathbf(x))_p, M = max_(mathbf(x) in S) norm(mathbf(x))_p, $
+
+//   then $forall mathbf(x) in RR^n, mathbf(x) eq.not mathbf(0), mathbf(x)/(norm(mathbf(x))_q) in S$, thus
+
+//   $ m lt.eq norm(mathbf(x)/(norm(mathbf(x))_q))_p lt.eq M => m norm(mathbf(x))_q lt.eq norm(mathbf(x))_p lt.eq M norm(mathbf(x))_q. $
+// ]
+
+#env("Example")[
+  For $l_p$ norms on $RR^n$,
+
+  $ norm(mathbf(x))_2 lt.eq norm(mathbf(x))_1 lt.eq sqrt(n)norm(mathbf(x))_2, " " norm(mathbf(x))_infinity lt.eq norm(mathbf(x))_2 lt.eq sqrt(n)norm(mathbf(x))_infinity, " " norm(mathbf(x))_infinity lt.eq norm(mathbf(x))_1 lt.eq n norm(mathbf(x))_infinity. $
+]
+
+#env("Definition")[
+  Let ${mathbf(x)^([k]) in RR^n}_(i=1)^infinity$ be a sequences and $mathbf(x)^* in RR^n$, then
+
+  $ lim_(i -> infinity) mathbf(x)^([i]) = mathbf(x)^* <=> forall 1 lt.eq k lt.eq n, lim_(i -> infinity) mathbf(x)^([i])_k = mathbf(x)^*_k. $
+]
+
+#env("Corollary")[
+  Let $norm(dot.c)$ be a norm on $RR^n$, ${mathbf(x)^([i])}_(i=1)^infinity subset RR^n$ be a sequences and $x^* in RR^n$, then
+
+  $ lim_(i -> infinity) mathbf(x)^([k]) = mathbf(x)^* <=> lim_(i -> infinity) norm(mathbf(x)^([k]) - mathbf(x)^*) = 0. $
+]
+
+#env("Definition")[
+  A function $norm(dot.c): RR^(n times n) -> RR$ is called a *matrix norm* if
+
+  + Positive definiteness: $forall A in RR^(n times n), norm(A) >= 0$, $norm(A) = 0$ iff $A = 0$;
+
+  + Absolute homogeneity: $forall A in RR^(n times n), k in RR, norm(k A) = abs(k)norm(A)$;
+
+  + Triangle inequality: $forall A, B in RR^(n times n), norm(A) + norm(B) >= norm(A + B)$;
+
+  + Sub-multiplicative: $forall A, B in RR^(n times n), norm(A) norm(B) gt.eq norm(A B)$.
+]
+
+#env("Theorem")[
+  Let $norm(dot.c)$ be a vector norm, then the *matrix norm induced by the vector norm* can be written as
+
+  $ norm(A) = max_(mathbf(x) in RR^n) norm(A mathbf(x))/norm(mathbf(x)) = max_(norm(mathbf(x))=1) norm(A mathbf(x)). $
+]
+
+#env("Example")[
+  The followings are some commonly used matrix norms:
+
+  + $norm(A)_1 = max_j sum_(i=1)^n |a_(i j)|$ (maximum of the $l_1$ norms of columns);
+
+  + $norm(A)_2 = sqrt(lambda_(max) (A^T A))$;
+
+  + $norm(A)_infinity = max_i sum_(j=1)^n |a_(i j)|$ (maximum of the $l_1$ norms of rows);
+
+  + $norm(A)_F = sqrt(sum_(i=1)^n sum_(j=1)^n a_(i j)^2)$ (*Frobenius norm*).
+]
+
+#env("Definition")[
+  Let $A in RR^(n times n)$ be symmetric, then $A$ is *positive semidefinite* if $mathbf(x)^T A mathbf(x) gt.eq 0$ for all $mathbf(x) in RR^n$, $A$ is *positive definite* if $mathbf(x)^T A mathbf(x) gt 0$ for all $mathbf(x) in RR^n$.
+]
+
+#env("Notation")[
+  We write $A succ.eq 0$ if $A$ is positive semidefinite, $A succ 0$ if $A$ is positive definite. The set of $n times n$ positive semidefinite matrices is denoted by $S^n_+$.
+]
+
+#env("Theorem")[
+  Let $A in RR^(n times n)$ be symmetric, then the following statements are equivalent
+
+  + All eigenvalues of $A$ are nonnegative;
+
+  + There exists $M in RR^(n times n)$ such that $A = M^T M$;
+
+  + $A$ is positive semidefinite.
+]
+
+#env("Theorem")[
+  Let $A in RR^(n times n)$ be symmetric, then the following statements are equivalent
+
+  + All eigenvalues of $A$ are positive;
+
+  + There exists an invertible matrix $M in RR^(n times n)$ such that $A = M^T M$;
+
+  + $A$ is positive definite.
+]
+
+#env("Remark")[
+  Let $A succ 0$, then
+
+  + $A^(-1) succ 0$ and $lambda_min (A) = inf{mathbf(x)^T A mathbf(x): norm(mathbf(x))_2 = 1}$;
+
+  + $norm(A)_2 = lambda_max (A) = (lambda_min (A^(-1)))^(-1)$.
 ]
 
 == Inner Product Space
@@ -263,6 +383,24 @@
 
   with the recursion basis as $mathbf(v)_1 = mathbf(u)_1$.
 ]
+
+// #env("Method", name: "Gram-Schmidt process")[
+//   #h(2em) Initialize: linearly independent vectors ${mathbf(v)^[0], dots, mathbf(v)^[k]} subset RR^n$, $w_0 = v_0$,
+
+//   #h(2em) For $k in NN^*$,
+
+//   + Compute $mathbf(w)^([k]) = mathbf(v)^([k]) - sum_(i=1)^(k-1) (mathbf(v)^[k]^T mathbf(w)^([j])) / norm(mathbf(w)^([j]))_2^2 mathbf(w)^([j])$.
+// ]
+
+// #env("Method", name: "Generalized Gram-Schmidt process")[
+//   Given $A in RR^n$ with $A succ 0$.
+
+//   #h(2em) Initialize: linearly independent vectors ${mathbf(v)^[0], dots, mathbf(v)^[k]} subset RR^n$, $w_0 = v_0$,
+
+//   #h(2em) For $k in NN^*$,
+
+//   + Compute $mathbf(w)^([k]) = mathbf(v)^([k]) - sum_(i=1)^(k-1) (mathbf(v)^[k]^T A mathbf(w)^([j])) / (mathbf(w)^[j]^T A mathbf(w)^([j])) mathbf(w)^([j])$.
+// ]
 
 #env("Definition")[
   Let $(mathbf(u)^*_1, mathbf(u)^*_2, dots)$ be a finite or infinite orthonormal list. The *orthogonal expansion* or *Fourier expansion* for an arbitrary $mathbf(w)$ is the series

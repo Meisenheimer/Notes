@@ -1,4 +1,5 @@
 #import "@local/doc:1.0.0": *
+#import "@local/math:1.0.0": *
 
 #show: doc.with(
   documentclass: "book",
@@ -8,7 +9,7 @@
   subtitle: none,
   authors: (
     (
-      name: "Zeyu Wang",
+      name: "WANG Zeyu",
       email: "zeyu.wang.0117@outlook.com",
       institude: none,
       corresponding: true,
@@ -43,4 +44,3 @@
 #include "src/SVM.typ"
 #include "src/Cluster.typ"
 #include "src/NeuralNetworks.typ"
-
