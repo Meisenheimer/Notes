@@ -178,4 +178,65 @@
 
 == Common distributions
 
+=== Common discrete distributions
+
+#env("Definition", name: "Bernoulli distribution")[
+  If $X$ is a random variable with $"Bernoulli"(p), p in (0, 1)$, then:
+
+  $ P(X = 1) = p, P(X = 0) = 1 - p. $
+]
+
+#env("Theorem")[
+  For $"Bernoulli"(p)$, the expectation is $mu = p$, the variance is $sigma^2 = p(1-p)$, the moment generating function is $M(t) = (1-p) + p e^t$.
+]
+
+#env("Definition", name: "Binomial distribution")[
+  If $X$ is a random variable with $"Binomial"(n, p), p in (0, 1), n in NN^*$, then:
+
+  $ P(X = x) = C_n^x p^x (1-p)^(n-x), x = 0, 1, dots, n. $
+]
+
+#env("Theorem")[
+  For $"Binomial"(n, p)$, the expectation is $mu = n p$, the variance is $sigma^2 = n p(1-p)$, the moment generating function is $M(t) = ((1-p) + p e^t)^n$.
+]
+
+#env("Definition", name: "Geometric distribution")[
+  If $X$ is a random variable with $"Geometric"(p), p in (0, 1)$, then:
+
+  $ P(X = x) = p (1-p)^x, x in NN. $
+]
+
+#env("Theorem")[
+  For $"Geometric"(p)$, the expectation is $mu = p / (1-p)$, the variance is $sigma^2 = (1-p)/(p^2)$, the moment generating function is $M(t) = p(1 - (1-p) e^t)^(-1)$.
+]
+
+#env("Definition", name: "Hypergeometric distribution")[
+  If $X$ is a random variable with $"Hypergeometric"(N, D, n), n = 1, 2, dots, min(N, D)$, then:
+
+  $ P(X = x) = (C_(N-D)^(n-x) C_D^x)/(C_N^n), x = 0, 1, dots, n. $
+]
+
+#env("Theorem")[
+  For $"Hypergeometric"(N, D, n)$, the expectation is $mu = (n D) / N$, the variance is $sigma^2 = (n D (N-D) (N-n))/(N^2 (N-1))$.
+]
+
+#env("Definition", name: "Negative binomial distribution")[
+  If $X$ is a random variable with $"NB"(r, p), r in NN^*, p in (0, 1)$, then:
+
+  $ P(X = x) = C_(x+r-1)^(r-1) p^r (1-p)^x, x in NN. $
+]
+
+#env("Theorem")[
+  For $"NB"(p)$, the expectation is $mu = (r p) / (1-p)$, the variance is $sigma^2 = (r(1-p))/(p^2)$, the moment generating function is $M(t) = p^r (1 - (1-p) e^t)^(-r)$.
+]
+
+#env("Definition", name: "Poisson distribution")[
+  If $X$ is a random variable with $"Poisson"(lambda), lambda > 0$, then:
+
+  $ P(X = x) = e^(-lambda) (lambda^x) / (x!), x in NN. $
+]
+
+#env("Theorem")[
+  For $"Poisson"(p)$, the expectation is $mu = lambda$, the variance is $sigma^2 = lambda$, the moment generating function is $M(t) = exp(lambda (e^t - 1))$.
+]
 
