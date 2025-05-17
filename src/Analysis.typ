@@ -100,6 +100,30 @@
   $ forall x, y in RR^n, h(y) - h(x) gt.eq (gradient h(x))^T (y - x). $
 ]
 
+=== Generalized derivative
+
+#env("Definition", name: "Generalized derivative")[
+  For $f(x) in L_("loc")^(1)(Omega)$, then $g(x) in L_("loc")^(1)(Omega)$ is called the $abs(alpha)$-th order generalized derivative of $f(x)$ if
+
+  $
+    forall phi(x) in C^(alpha)(Omega), integral_(Omega) g(x) phi(x) upright(d) x = (-1)^(abs(alpha)) integral_(Omega) f(x) partial^(alpha) phi(x) upright(d) x,
+  $
+
+  with the notation
+
+  $
+    D^alpha f(x) = g(x).
+  $
+]
+
+#env("Theorem")[
+  If $f(x) in C^(alpha) (Omega)$, then $D^alpha f(x) = f^(alpha)(x)$.
+]
+
+#env("Theorem")[
+  Given $Omega = Omega_(1) union Omega_(1)$, $m(Omega_(1) inter Omega_(1)) = 0$, and $f in C(overline(Omega)) inter C^(1)(Omega_(1)) inter C^(1)(Omega_(2))$, then $D^(alpha) f(x)$ exists for $abs(alpha) = 1$, and for all $x in "int" Omega_(1) union "int" Omega_(2)$, $D^(alpha) f(x) = f^(alpha) (x)$.
+]
+
 === Convex sets and functions
 
 #env("Definition")[
@@ -497,6 +521,13 @@
   For $p in (1, +infinity)$, equality holds iff $exists k >= 0, " s.t. " f = k g$ or $k f = g$.
 ]
 
+=== Friedriches inequality
+
+#env("Theorem", name: "Friedriches inequality")[
+  Given a bounded simply connected region $Omega subset RR^(n)$, with the diameter $d$, then for $u in H_(0)^(1)(Omega)$,
+
+  $ norm(u)_(L^(2)(Omega)) lt.eq d norm(gradient u)_(L^(2)(Omega)). $
+]
 
 == Special Functions
 

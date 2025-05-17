@@ -35,6 +35,7 @@
 #include "src/Integration.typ"
 #include "src/Optimization.typ"
 #include "src/IVP.typ"
+#include "src/FEM.typ"
 #include "src/NumberTheory.typ"
 
 #part("Machine Learning")
