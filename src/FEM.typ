@@ -68,3 +68,39 @@
 
   $ norm(v)_(0, Omega) lt.eq C(Omega) abs(v)_(m, Omega). $
 ]
+
+== Galerkin Method
+
+#env("Notation")[
+  $V_(h) subset V$ denotes a given finite dimensional subspace.
+]
+
+#env("Definition")[
+  The idea of *Galerkin method* is to solve the $u_(h) in V_(h)$, such that
+
+  $ a(u_(h), v_(h)) = f(v_(h)). $
+]
+
+#env("Definition")[
+  The idea of *Ritz method* is to solve the $u_(h) in V_(h)$, such that
+
+  $ J(u_(h)) = min_(v_(h) in V_(h)) J(v_(h)), $
+
+  where
+
+  $ J(v) = 1/2 a(v, v) - f(v). $
+]
+
+#env("Definition")[
+  A *$k$-simplex* is a $k$-dimensional convex hull of $k + 1$ vertices. Given $x_(0), dots, x_(n) in RR^(n)$ affinely independent vectors, then a $n$-simplex is defined as
+
+  $ K_(n) = {sum_(i=1)^(n) theta_(i) x_(i): sum_(i=1)^(n) theta_(i) = 1, forall j in [0, n] inter ZZ, theta_(j) gt.eq 0}. $
+]
+
+#env("Definition")[
+  Let $dim(V_(h)) = N$ and $phi_(1), dots, phi_(N)$ be the basis functions of $V_(N)$, then the matrix $K = (a(phi_(i), phi_(j)))_(N times N)$ is the *stiffness matrix*, and $F = (f(phi_(i)))_(N)$ is the *load vector*.
+]
+
+#env("Theorem")[
+  Let $a(dot.c, dot.c): V times V -> RR^(n)$ be a bilinear symmetric $V$-elliptic function, then the corresponding stiffness matrix is symmetric and positive definite.
+]
