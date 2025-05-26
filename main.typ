@@ -29,6 +29,10 @@
 #include "src/Graph.typ"
 #include "src/Combinatorics.typ"
 
+#part("Physics")
+
+#include "src/FluidMechanics.typ"
+
 #part("Scientific Computing")
 
 #include "src/Interpolation.typ"
